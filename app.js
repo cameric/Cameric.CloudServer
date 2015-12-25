@@ -1,7 +1,6 @@
 'use strict';
 var domain = require('domain');
 var express = require('express');
-var path = require('path');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 var cloud = require('./cloud');
@@ -14,9 +13,6 @@ app.use(cloud);
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: false}));
 app.use(cookieParser());
-
-// Sessions
-app.use(AV.Cloud.CookieSession({secret: 'SmallDonation', maxAge: 3600000, fetchUser: false}));
 
 // 未处理异常捕获 middleware
 app.use(function (req, res, next) {
