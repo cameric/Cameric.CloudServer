@@ -8,7 +8,7 @@ exports.getUserShortById = function (req, res) {
     var user = AV.Object.extend('_User');
     var query = new AV.Query(user);
     query.equalTo('objectId', req.params.id);
-    query.select('username', 'category', 'score', 'avatar');
+    query.select('username', 'name', 'category', 'score', 'avatar');
 
     query.first({
         success: function (results) {
