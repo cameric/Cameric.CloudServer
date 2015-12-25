@@ -3,16 +3,16 @@ The back-end services based on LeanCloud BaaS API
 
 ## Install Locally ##
 1.  Clone repository to local directory and run
-```Bash
-$ npm install
-```
+    ```Bash
+    $ npm install
+    ```
     This will install all necessary Node dependencies to your repository
 2.  Check that you have installed LeanCloud command-line tool.
     If not, please follow this guide to install the CLI
 3.  Once the CLI is successfully installed, you can run:
-```Bash
-$ avoscloud
-```
+    ```Bash
+    $ avoscloud
+    ```
     to start the server locally.
         Note that LeanCloud CLI contains a nodemon module.
         So everytime you modify the code, you don't need to manually stop the server and restart it again.
@@ -20,14 +20,14 @@ $ avoscloud
 
 ## Usage ##
 All cloud functions should be called using the standard API. The curl command looks like:
-    ```Bash
-    curl -X POST -H "Content-Type: application/json; charset=utf-8" \
-        -H "X-LC-Id: lAeVhtmnzDG3lEVKI8fV7F9c" \
-        -H "X-LC-Key: qWKHBug84HMSqXrR5DXjBQsO" \
-        -H "X-LC-Prod: 0" \
-        -d '{}' \
-    https://leancloud.cn/1.1/functions/updateFilters
-    ```
+```Bash
+curl -X POST -H "Content-Type: application/json; charset=utf-8" \
+    -H "X-LC-Id: lAeVhtmnzDG3lEVKI8fV7F9c" \
+    -H "X-LC-Key: qWKHBug84HMSqXrR5DXjBQsO" \
+    -H "X-LC-Prod: 0" \
+    -d '{}' \
+https://leancloud.cn/1.1/functions/updateFilters
+```
 
 1.  Three headers about the app info must be included
 2.  Data should be packed using JSON/JSONP and the format for each API is provided below
