@@ -3,16 +3,16 @@ The back-end services based on LeanCloud BaaS API
 
 ## Install Locally ##
 1.  Clone repository to local directory and run
-    ```Bash
-    $ npm install
-    ```
+```Bash
+$ npm install
+```
     This will install all necessary Node dependencies to your repository
 2.  Check that you have installed LeanCloud command-line tool.
     If not, please follow this guide to install the CLI
 3.  Once the CLI is successfully installed, you can run:
-    ```Bash
-    $ avoscloud
-    ```
+```Bash
+$ avoscloud
+```
     to start the server locally.
         Note that LeanCloud CLI contains a nodemon module.
         So everytime you modify the code, you don't need to manually stop the server and restart it again.
@@ -40,20 +40,24 @@ All cloud functions should be called using the standard API. The curl command lo
     -   Description: retrive the newest list of filters used for the search bar
     -   Input: (None) no input query needed
     -   Return: (Object) an formatted object is returned. The format will always look like:
-            {
-                "keys": [...]       // A list of keys of the "filters" field
-                "filters": {...}    // An object of all filters in key-value pairs
-            }
+        ```JavaScript
+        {
+            "keys": [...]       // A list of keys of the "filters" field
+            "filters": {...}    // An object of all filters in key-value pairs
+        }
+        ```
 
 2.  `getUsersByFilter`
     -    Description: get a list of user infos according to the provided filters
     -    Input: (Object) an object of filters in key-value pair
             Do NOT include filters that are not in the "keys" field of the return value of updateFilters
          Example filters looks like:
-             {
-                 "category": ["开发", "律师"]
-                 "score": 20
-             }
+         ```JavaScript
+         {
+             "category": ["开发", "律师"]
+             "score": 20
+         }
+         ```
     -    Return: (Array) an array of all the matched users
             In the current version the entire user info will be returned.
             This might be changed later after more discussion.
