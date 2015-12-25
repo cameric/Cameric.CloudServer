@@ -1,0 +1,15 @@
+node_modules
+start.sh
+
+# VIM
+*~
+*.swp
+.avoscloud/
+.idea/
+
+# Dependencies
+node_modules/
+bower_components/
+
+# Others
+.DS_Store
