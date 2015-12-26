@@ -2,7 +2,7 @@
 
 The back-end services based on LeanCloud BaaS API
 
-## Install Locally ##
+## Local Installation ##
 
   Clone repository to local directory and run
 
@@ -16,13 +16,14 @@ $ npm install
   If not, please follow this guide to install the CLI
 
   Once the CLI is successfully installed, you can run:
+
 ```Bash
 $ avoscloud
 ```
 
->Note that LeanCloud CLI contains a nodemon module.
->So everytime you modify the code, you don't need to manually stop the server and restart it again.
->The server will restart automatically.
+> Note that LeanCloud CLI contains a nodemon module.
+> So everytime you modify the code, you don't need to manually stop the server and restart it again.
+> The server will restart automatically.
 
 ## Usage ##
 All cloud functions should be called using the standard API. The curl command looks like:
