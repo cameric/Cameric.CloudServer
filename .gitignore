@@ -12,4 +12,4 @@ node_modules/
 bower_components/
 
 # Others
-.DS_Store
+.DS_Store.avoscloud/

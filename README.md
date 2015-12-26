@@ -130,3 +130,35 @@ https://leancloud.cn/1.1/functions/updateFilters
 > Subject to change
 
 ### Appointment API ###
+
+#### `getAppointmentByProvider` ####
+-   Description:
+
+    Get appointments based the user who's providing the service.
+
+-   Input:
+
+    (String) The user ID (?) of the provider.
+
+-   Return:
+
+    (Array) An array of all matched appointments, represented as
+    `(startTime, endTime, type)`.
+
+> Subject to change: Should the query specify a date range for the appointments?
+
+#### `getAppointmentByReceiver` ####
+-   Description:
+
+    Get appointments based the user who's receiving the service.
+
+-   Input:
+
+    (String) The user ID (?) of the receiver.
+
+-   Return:
+
+    (Array) An array of all matched appointments, represented as
+    `(startTime, endTime, type)`.
+
+> Subject to change: Should the query specify a date range for the appointments?
