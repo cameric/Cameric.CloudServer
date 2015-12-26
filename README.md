@@ -59,7 +59,7 @@ https://leancloud.cn/1.1/functions/updateFilters
 
     (Object) an formatted object is returned. The format will always look like:
 
-```JavaScript
+```js
 {
     "keys": [...]       // A list of keys of the "filters" field
     "filters": {...}    // An object of all filters in key-value pairs
@@ -80,7 +80,7 @@ https://leancloud.cn/1.1/functions/updateFilters
 
   Example filters looks like:
 
-```JavaScript
+```js
 {
     "category": ["开发", "律师"]
     "score": 20
