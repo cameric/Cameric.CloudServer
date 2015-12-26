@@ -48,10 +48,15 @@ https://leancloud.cn/1.1/functions/updateFilters
 #### `updateFilters` ####
 
 -   <em> Description: </em>
+
     retrive the newest list of filters used for the search bar
+
 -   <em> Input: </em>
+
     (None) no input query needed
+
 -   <em> Return: </em>
+
     (Object) an formatted object is returned. The format will always look like:
 
 ```JavaScript
@@ -63,9 +68,12 @@ https://leancloud.cn/1.1/functions/updateFilters
 
 ####  `getUsersByFilter` ####
 
--   Description:
+-   <em> Description: </em>
+
     get a list of user infos according to the provided filters
--   Input:
+
+-   <em> Input: </em>
+
     (Object) an object of filters in key-value pair
 
 > Do NOT include filters that are not in the "keys" field of the return value of updateFilters
@@ -74,31 +82,51 @@ https://leancloud.cn/1.1/functions/updateFilters
 
 ```JavaScript
 {
-"category": ["开发", "律师"]
-"score": 20
+    "category": ["开发", "律师"]
+    "score": 20
 }
 ```
--    Return: (Array) an array of all the matched users
-In the current version the entire user info will be returned.
-This might be changed later after more discussion.
 
-3.  `getUsersByKeyword (NOT FINISHED!)`
--    Description: get a list of user infos according to an input query string
-This function is finished, but not activated because according to the documentation,
-searching directly from the client-side includes more flexibility and constraints,
-which is more preferable in our case.
+-   <em> Return: </em>
+
+    (Array) an array of all the matched users
+
+> In the current version the entire user info will be returned.
+> This might be changed later after more discussion.
+
+#### `getUsersByKeyword (NOT FINISHED!)` ####
+
+-   Description:
+
+    get a list of user infos according to an input query string
+
+> This function is finished, but not activated because according to the documentation,
+> searching directly from the client-side includes more flexibility and constraints,
+> which is more preferable in our case.
 
 ### User API ###
-1.  `getUserShortById`
--    Description: get the truncated user info according to an UID
--    Input: (String) the target UID
--    Return: (Object) the shortened version of user info including only necessary information
-Currently the list of information contains:
-+    name
-+    username
-+    category'
-+    score
-+    avatar (name, link and timestamp, etc)
-Subject to change
+
+#### `getUserShortById` ####
+
+-   Description:
+
+    get the truncated user info according to an UID
+
+-   Input:
+
+    (String) the target UID
+
+-   Return:
+
+    (Object) the shortened version of user info including only necessary information
+
+    Currently the list of information contains:
+    +   name
+    +   username
+    +   category'
+    +    score
+    +    avatar (name, link and timestamp, etc)
+
+> Subject to change
 
 ### Appointment API ###
