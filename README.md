@@ -1,6 +1,6 @@
 ## Cameric.CloudServer ##
 
-The back-end services based on LeanCloud BaaS API
+  The back-end services based on LeanCloud BaaS API
 
 ## Local Installation ##
 
@@ -11,21 +11,23 @@ $ npm install
 ```
   This will install all necessary Node dependencies to your repository
 
-  Check that you have installed LeanCloud command-line tool.
-  If not, please follow this guide to install the CLI
+  Check that you have installed LeanCloud command-line tool. If not, please follow this guide to install the CLI
 
   Once the CLI is successfully installed, you can run:
 
 ```Bash
 $ avoscloud
 ```
+  to start the server locally
 
 > Note that LeanCloud CLI contains a nodemon module.
 > So everytime you modify the code, you don't need to manually stop the server and restart it again.
 > The server will restart automatically.
 
 ## Usage ##
-All cloud functions should be called using the standard API. The curl command looks like:
+
+  All cloud functions should be called using the standard API. The curl command looks like:
+
 ```Bash
 curl -X POST -H "Content-Type: application/json; charset=utf-8" \
     -H "X-LC-Id: lAeVhtmnzDG3lEVKI8fV7F9c" \
@@ -45,11 +47,11 @@ https://leancloud.cn/1.1/functions/updateFilters
 
 #### `updateFilters` ####
 
--   Description:
+-   <em> Description: </em>
     retrive the newest list of filters used for the search bar
--   Input:
+-   <em> Input: </em>
     (None) no input query needed
--   Return:
+-   <em> Return: </em>
     (Object) an formatted object is returned. The format will always look like:
 
 ```JavaScript
