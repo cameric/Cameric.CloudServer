@@ -12,7 +12,6 @@ $ npm install
   This will install all necessary Node dependencies to your repository
 
   Check that you have installed LeanCloud command-line tool.
-
   If not, please follow this guide to install the CLI
 
   Once the CLI is successfully installed, you can run:
@@ -29,10 +28,10 @@ $ avoscloud
 All cloud functions should be called using the standard API. The curl command looks like:
 ```Bash
 curl -X POST -H "Content-Type: application/json; charset=utf-8" \
--H "X-LC-Id: lAeVhtmnzDG3lEVKI8fV7F9c" \
--H "X-LC-Key: qWKHBug84HMSqXrR5DXjBQsO" \
--H "X-LC-Prod: 0" \
--d '{}' \
+    -H "X-LC-Id: lAeVhtmnzDG3lEVKI8fV7F9c" \
+    -H "X-LC-Key: qWKHBug84HMSqXrR5DXjBQsO" \
+    -H "X-LC-Prod: 0" \
+    -d '{}' \
 https://leancloud.cn/1.1/functions/updateFilters
 ```
 
@@ -43,22 +42,34 @@ https://leancloud.cn/1.1/functions/updateFilters
 ## APIs (PLEASE KEEP THE MOST UPDATED VERSION) ##
 
 ### Search API ###
-1.  `updateFilters`
--   Description: retrive the newest list of filters used for the search bar
--   Input: (None) no input query needed
--   Return: (Object) an formatted object is returned. The format will always look like:
+
+#### `updateFilters` ####
+
+-   Description:
+    retrive the newest list of filters used for the search bar
+-   Input:
+    (None) no input query needed
+-   Return:
+    (Object) an formatted object is returned. The format will always look like:
+
 ```JavaScript
 {
-"keys": [...]       // A list of keys of the "filters" field
-"filters": {...}    // An object of all filters in key-value pairs
+    "keys": [...]       // A list of keys of the "filters" field
+    "filters": {...}    // An object of all filters in key-value pairs
 }
 ```
 
-2.  `getUsersByFilter`
--    Description: get a list of user infos according to the provided filters
--    Input: (Object) an object of filters in key-value pair
-Do NOT include filters that are not in the "keys" field of the return value of updateFilters
-Example filters looks like:
+####  `getUsersByFilter` ####
+
+-   Description:
+    get a list of user infos according to the provided filters
+-   Input:
+    (Object) an object of filters in key-value pair
+
+> Do NOT include filters that are not in the "keys" field of the return value of updateFilters
+
+  Example filters looks like:
+
 ```JavaScript
 {
 "category": ["开发", "律师"]
