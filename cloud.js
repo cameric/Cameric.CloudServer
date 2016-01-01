@@ -1,10 +1,9 @@
-var AV = require('leanengine'),
-    apptAPIs = require('./models/appointment'),
-    searchAPIs = require('./models/search'),
-    userAPIs = require('./models/user');
+var AV = require('leanengine')
+var appointmentAPIs = require('./models/appointment')
+var searchAPIs = require('./models/search')
+var userAPIs = require('./models/user')
 
-AV.Cloud.define("getAppointmentByProvider", apptAPIs.getAppointmentByProvider);
-AV.Cloud.define("getAppointmentByReceiver", apptAPIs.getAppointmentByReceiver);
+AV.Cloud.define("getAppointmentsInRange", appointmentAPIs.getAppointmentsInRange);
 
 AV.Cloud.define("updateFilters", searchAPIs.updateFilters);
 AV.Cloud.define("getUsersByFilter", searchAPIs.getUsersByFilter);

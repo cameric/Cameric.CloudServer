@@ -41,7 +41,12 @@ https://leancloud.cn/1.1/functions/updateFilters
 2.  Data should be packed using JSON/JSONP and the format for each API is provided below
 3.  The URL should always be in the format of https://leancloud.cn/1.1/functions/{FunctionName}
 
-## APIs (PLEASE KEEP THE MOST UPDATED VERSION) ##
+## APIs ##
+*Note for future development:* Keeping docs in the readme is cumbersome. In the
+future, please use [JSDoc](usejsdoc.org) to document your functions directly in
+the source files; you can then automatically generate documentation on the
+command line. See my `models/appointments.js` for an example.
+- Spencer
 
 ### Search API ###
 
@@ -130,35 +135,4 @@ https://leancloud.cn/1.1/functions/updateFilters
 > Subject to change
 
 ### Appointment API ###
-
-#### `getAppointmentByProvider` ####
--   Description:
-
-    Get appointments based the user who's providing the service.
-
--   Input:
-
-    (String) The user ID (?) of the provider.
-
--   Return:
-
-    (Array) An array of all matched appointments, represented as
-    `(startTime, endTime, type)`.
-
-> Subject to change: Should the query specify a date range for the appointments?
-
-#### `getAppointmentByReceiver` ####
--   Description:
-
-    Get appointments based the user who's receiving the service.
-
--   Input:
-
-    (String) The user ID (?) of the receiver.
-
--   Return:
-
-    (Array) An array of all matched appointments, represented as
-    `(startTime, endTime, type)`.
-
-> Subject to change: Should the query specify a date range for the appointments?
+Converted to JSDoc.
