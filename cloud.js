@@ -1,7 +1,7 @@
-var AV = require('leanengine')
-var appointmentAPIs = require('./models/appointment')
-var searchAPIs = require('./models/search')
-var userAPIs = require('./models/user')
+var AV = require('leanengine'),
+    appointmentAPIs = require('./models/appointment'),
+    searchAPIs = require('./models/search'),
+    userAPIs = require('./models/user');
 
 AV.Cloud.define("getAppointmentsInRange", appointmentAPIs.getAppointmentsInRange);
 
@@ -10,5 +10,7 @@ AV.Cloud.define("getUsersByFilter", searchAPIs.getUsersByFilter);
 //AV.Cloud.define("getUsersByKeyword", searchAPIs.getUsersByKeyword);
 
 AV.Cloud.define("getUserShortById", userAPIs.getUserShortById);
+AV.Cloud.define("signUpWithWeibo", userAPIs.signUpWithWeibo);
+AV.Cloud.define("signUpWithWeixin", userAPIs.signUpWithWeixin);
 
 module.exports = AV.Cloud;

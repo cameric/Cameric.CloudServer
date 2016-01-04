@@ -19,3 +19,34 @@ exports.getUserShortById = function (req, res) {
     });
 };
 
+var encapsulateThirdPartyUserdata = function (platform, userData, req, res) {
+    var authData = {};
+    authData[platform] = userData;
+
+    AV.User._logInWith(platform, {
+        authData: authData,
+        success: function (user) {
+            //返回绑定后的用户
+            req.success(user)
+        },
+        error: function (err) {
+            res.error(err)
+        }
+    })
+};
+
+exports.signUpWithWeibo = function (req, res) {
+    encapsulateThirdPartyUserdata('weibo', {
+        'uid': req.params.uid,
+        'access_token': req.params.accessToken,
+        'expiration_in': '36000'
+    }, req, res)
+};
+
+exports.signUpWithWeixin = function (req, res) {
+    encapsulateThirdPartyUserdata('weixin', {
+        "openid": req.params.openId,
+        "access_token": req.params.accessToken,
+        "expires_in": 1382686496
+    }, req, res)
+};
