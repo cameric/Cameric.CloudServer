@@ -23,8 +23,8 @@ exports.getAppointmentsInRange = function (req, res) {
     var query = new AV.Query(appt);
 
     // Search based on client/provider. At least one MUST be specified.
-    let filterClient = req.params.hasOwnProperty('client')
-    let filterProvider = req.params.hasOwnProperty('provider')
+    var filterClient = req.params.hasOwnProperty('client');
+    var filterProvider = req.params.hasOwnProperty('provider');
     if (!filterClient && !filterProvider) {
       res.error(403, 'Query contained neither client nor provider filter. ')
     }
@@ -37,8 +37,8 @@ exports.getAppointmentsInRange = function (req, res) {
     }
 
     // Restrict to the given time range if requested.
-    query.greaterThanOrEqualTo('startTime', req.params.fromTime)
-    query.lessThanOrEqualTo('startTime', req.params.toTime)
+    query.greaterThanOrEqualTo('startTime', req.params.fromTime);
+    query.lessThanOrEqualTo('startTime', req.params.toTime);
 
     query.select('startTime', 'endTime', 'type');
 
