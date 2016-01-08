@@ -8,7 +8,7 @@ var AV = require('leanengine');
     @type {string[]}
     @default
  */
-const USER_SHORT_DATA = ['uid', 'username', 'name', 'category', 'score', 'avatar']
+const USER_SHORT_DATA = ['uid', 'username', 'name', 'category', 'score', 'avatar', 'summary']
 
 var encapsulateThirdPartyUserdata = function (platform, userData, req, res) {
     var authData = {};
@@ -78,9 +78,10 @@ exports.getUsersShortByKeyword = function (req, res) {
 
     // TODO: Searching by substring match is too slow for small user data sets
     // This is just a simple placeholder for now
-    query.contains('username', req.keyword.toLowerCase())
-    query.contains('name', req.keyword.toLowerCase())
+    query.contains('username', req.params.keyword)
 
+    query.skip(req.params.skip)
+    query.limit(req.params.numResults)
     query.select(USER_SHORT_DATA)
 
     query.find({
